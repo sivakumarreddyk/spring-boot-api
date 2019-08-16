@@ -1,0 +1,22 @@
+version: '3.1'
+networks:
+  siva_google_vpc:
+    driver: bridge
+
+services: 
+  spring_shiv:
+    image: kshiva009/spring:1.0
+    container_name: kumar 
+    ports: 
+      - "8089:8080"
+    networks:
+      - siva_google_vpc
+  
+  mongodb:
+    image: mongo:latest 
+    container_name: mongodb
+    networks: 
+      - siva_google_vpc
+
+
+
